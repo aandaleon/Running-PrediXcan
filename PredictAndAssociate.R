@@ -1,4 +1,4 @@
-##Script runs a loop to run all tissues and phenotypes in PrediXcan from an input list, creating folders of the tissues with folders of the phenotypes within them
+##Script runs a loop to run all tissues and phenotypes in PrediXcan from an input list through prediction and association, creating folders of the tissues with folders of the phenotypes within them
 
 "%&%" = function(a,b) paste(a,b,sep="")
 database_tissues <- read.table("/home/angela/px_yri_chol/PrediXcan/database_tissues.txt")
