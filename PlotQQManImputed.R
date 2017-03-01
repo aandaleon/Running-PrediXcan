@@ -46,3 +46,4 @@ cut_y <- y[ind,]
 y_e7 <- subset(y, P < 10^-7)
 y_qq <- rbind(y_e7, cut_y)
 qq(y_qq$P)
+#plots every 25th SNP and all SNPs w/ P < 10^-7
