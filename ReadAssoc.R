@@ -6,6 +6,7 @@ database_tissues <- database_tissues$V1
 pheno_names <- read.table('/home/angela/px_yri_chol/GWAS/Phenotypes/pheno_names.txt')
 pheno_names <- pheno_names$V1
 significant <- read.table('/home/angela/px_yri_chol/PrediXcan/significant_genes.txt', header = T)
+    #This is a file with a single line "gene beta t p se.beta. tissue pheno chr genename"
 
 for(i in database_tissues){
 for(j in pheno_names){
