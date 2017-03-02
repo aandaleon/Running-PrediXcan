@@ -1,4 +1,4 @@
-#mtches ESNG codes to common gene names
+#matches ESNG codes to common gene names in association.txt files
 library(ggplot2)
 library(tidyr)
 library(dplyr)
