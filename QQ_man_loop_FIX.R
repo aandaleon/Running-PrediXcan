@@ -10,7 +10,7 @@ colnames(Chrome)<-c('CHR','gene','gene_name')
 Chrome<-transform(Chrome, CHR=as.numeric(CHR))
 pheno_names <- read.table('/home/angela/px_yri_chol/GWAS/Phenotypes/pheno_names.txt')
 pheno_names <- pheno_names$V1
-database_tissues <- database_tissues <- read.table("/home/angela/px_yri_chol/PrediXcan/database_tissues.txt")
+database_tissues <- read.table("/home/angela/px_yri_chol/PrediXcan/database_tissues.txt")
 database_tissues <- database_tissues$V1
 for(y in pheno_names)
 for(x in database_tissues){
