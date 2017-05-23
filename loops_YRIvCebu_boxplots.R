@@ -1,13 +1,13 @@
 #goal: make boxplots for a tissue and a gene, with adjacent "YRI" and "Cebu"
 "%&%" = function(a,b) paste(a,b,sep="")
 library(dplyr)
-genes <- read.table('/home/angela/compare/chr_bp_gene.txt')
-genes <- genes$V3
-database_tissues <- read.table("/home/angela/px_yri_chol/PrediXcan/database_tissues.txt")
-database_tissues <- database_tissues$V1
+sigGenes <- read.table('/home/angela/compare/sigGenes.txt')
+sigGenes <- sigGenes$V1
+sigTiss <- read.table("/home/angela/compare/sigTiss.txt")
+sigTiss <- sigTiss$V1
 
-for(i in database_tissues){
-  for(j in genes){
+for(i in sigTiss){
+  for(j in sigGenes){
     tryCatch({
       x <- read.table("/home/angela/px_cebu_chol/PrediXcan/" %&% i %&% "/predicted_expression.txt", header=T)
       keep <- c("IID", j)
