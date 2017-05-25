@@ -32,6 +32,6 @@ for(i in sigTiss){
       title <- paste(j, "in", i)
       boxplot(x$gene, y$gene, ylim = range(x$gene, y$gene), names = c("Cebu", "YRI"), main = title, xlab = "Population", ylab = "Expression Level")
       dev.off()
-    }, error = function(e){})
+    }, error = function(e){}) #skips errors aka genes that are missing from tissues
   }
 }
