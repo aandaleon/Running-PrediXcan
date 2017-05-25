@@ -1,4 +1,5 @@
 #Plots a cholestrol trait against gene expression, with overlapping populations
+#If anyone knows how to make this into an errorless loop, help would be greatly appreciated
 "%&%" = function(a,b) paste(a,b,sep="")
 library(data.table)
 library(ggplot2)
