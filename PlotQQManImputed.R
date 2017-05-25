@@ -1,3 +1,4 @@
+#Creates a manhattan and QQ for imputed genotypes
 source("/home/angela/px_yri_chol/GWAS/qqman.r")
 
 CHOL_log <- read.table('/home/angela/px_yri_chol/PrediXcan/MichImpOutput/GWAS/CHOL.assoc.dosage', header = T)
