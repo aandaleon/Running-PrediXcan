@@ -1,4 +1,5 @@
 #Edited script from https://github.com/dbaghdan/Lung-Breast-Cancer-Association/blob/master/R-Code/Plot%20Loop.R
+#creates a QQ and manhattan from genes outputted from PrediXcan
 library(tidyr)
 library(dplyr)
 source("/px_yri_chol/GWAS/qqman.r")
