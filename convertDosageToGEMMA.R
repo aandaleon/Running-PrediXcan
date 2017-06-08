@@ -1,5 +1,6 @@
 #so this might work
 #jk "Cannot allocate memory"
+#also jk it's totally unnecessary
 "%&%" = function(a,b) paste(a,b,sep="")
 library(data.table)
 for(i in 1:22){
