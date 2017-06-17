@@ -1,29 +1,14 @@
 #makes boxplots for genotype dosages vs phenotype
-"%&%" = function(a,b) paste(a,b,sep="")
-library(data.table)
-library(readr)
 
-sigSNP <- read.table('/home/angela/px_yri_chol/GEMMA/sigSNP.txt', sep = ",")
-sigSNP <- t(sigSNP)
-write.table(sigSNP, '/home/angela/px_yri_chol/GEMMA/sigSNP.txt', col.names = F, row.names = F, quote = F)
-sigSNP <- read.table('/home/angela/px_yri_chol/GEMMA/sigSNP.txt', header = T)
-sigSNP <- sigSNP[-c(1, 2),]
-phenoYRIwoIID2 <- read.table('/home/angela/px_yri_chol/GEMMA/phenoYRIwIID2.txt', header = T)
-dosage <- cbind(phenoYRIwoIID2, sigSNP)
-dosage$rs172315 <- as.character(dosage$rs172315)
-dosage$rs172315 <- as.numeric(dosage$rs172315)
-dosage$rs58861508 <- as.character(dosage$rs58861508)
-dosage$rs58861508 <- as.numeric(dosage$rs58861508)
-dosage$rs145792537 <- as.character(dosage$rs145792537)
-dosage$rs145792537 <- as.numeric(dosage$rs145792537)
+sigSNP <- read.table('/home/angela/px_yri_chol/GEMMA/sigSNP.txt', sep = ",") #extracted rows w/ wanted sigSNPs using grep
+sigSNP <- t(sigSNP) #switches columns and rows
+sigSNP <- sigSNP[-c(1, 2),] #removes first two rows
+phenoYRIwIID2 <- read.table('/home/angela/px_yri_chol/GEMMA/phenoYRIwIID2.txt', header = T)
+dosage <- cbind(phenoYRIwIID2, sigSNP)
 dosage$rs34065661 <- as.character(dosage$rs34065661)
 dosage$rs34065661 <- as.numeric(dosage$rs34065661)
-dosage$rs7412 <- as.character(dosage$rs7412)
-dosage$rs7412 <- as.numeric(dosage$rs7412)
 dosage$rs1065853 <- as.character(dosage$rs1065853)
 dosage$rs1065853 <- as.numeric(dosage$rs1065853)
-dosage2 <- dosage
-dosage2$rs172315 <- round(dosage$rs172315)
-dosage2$rs34065661 <- round(dosage$rs34065661)
-boxplot(dosage2$HDL_rank~dosage2$rs34065661, ylab = "HDL ranked", xlab = "rs34065661 genotype")
-
+dosage$rs34065661 <- round(dosage$rs34065661) #rounds genotypes to 0, 1, or 2 to condense number of plots
+dosage$rs1065853 <- round(dosage$rs1065853)
+boxplot(dosage$HDL_rank~dosage$rs34065661, ylab = "HDL rank normalized", xlab = "rs34065661 genotype")
